@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts about Anime and Manga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #app {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #fact-container {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Fun Facts about Anime and Manga</h1>
+        <div id="fact-container">
+            <p id="fun-fact"></p>
+        </div>
+        <button id="new-fact-btn">Show Fun Fact</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const funFacts = [
+                "Did you know that anime and manga enthusiasts often participate in cosplay? Cosplay, short for 'costume play,' is a popular activity where fans dress up as their favorite characters from anime, manga, or other media.",
+                "Anime and manga conventions are held worldwide, attracting thousands of fans who come together to celebrate their favorite series and characters.",
+                "The word 'anime' is derived from the English word 'animation,' but in Japan, it refers to all forms of animated media.",
+                "Manga is a style of comic books and graphic novels originating from Japan, and it covers a wide range of genres and themes.",
+                "Many popular anime series are based on manga, and they often follow the storyline of the manga closely."
+            ];
+
+            const factContainer = document.getElementById('fun-fact');
+            const newFactBtn = document.getElementById('new-fact-btn');
+
+            function displayRandomFact() {
+                const randomIndex = Math.floor(Math.random() * funFacts.length);
+                factContainer.textContent = funFacts[randomIndex];
+            }
+
+            newFactBtn.addEventListener('click', displayRandomFact);
+
+            // Display a fact on initial load
+            displayRandomFact();
+        });
+    </script>
+</body>
+</html>
